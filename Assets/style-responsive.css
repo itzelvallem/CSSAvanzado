@@ -1,0 +1,60 @@
+/* La responsividad en un sitio web se refiere a la capacidad que tiene de adaptarse y verse correctamente en diferentes dispositivos y tamanios de pantalla, como computadoras de escritorio, tabletas y telefonos moviles. Es esencial para proporcionar una experiencia de usuario optima en cualquier dispositivo. */
+
+
+
+body {
+    text-align: center;
+    color: red;
+}
+
+/*
+
+CSS nos ofrece una herramienta poderosa llamada Media Query (consulta de medios) para lograr esto. Una media query es una regla de CSS que se aplica SOLO cuando se cumplen ciertas condiciones, estas condiciones estan relacionadas con las caracteristicas del dispositivo, como el ancho de la pantalla, la orientacion y la resolucion.
+
+La sintaxis para una media query es:
+
+
+@media(parametros o condiciones a cumplir){
+    estilos que se aplican cuando se cumplen las condiciones
+}
+
+*/
+
+/* Primera Media Query para cambiar el color del texto a un color azul cuando el ancho de la pantalla sea menor o igual a 500px */
+
+@media(max-width:500px) {
+    body {
+        color: blue;
+    }
+
+    .parrafo {
+        display: none;
+    }
+
+}
+
+
+/* Media Query para cambiar el color de nuestros textos a verde, cuando se detecte un cambio en la orientación de la ventana */
+
+@media (orientation: landscape) {
+    body {
+        color: green;
+
+    }
+}
+
+/* Media Query para cambiar el color de nuestros textos a amarillo, cuando se detecte una orientación landscape y ademas un ancho maximo de 500px */
+
+@media (orientation: landscape) and (max-width:500px) {
+    body {
+        color: goldenrod;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .contenedor {
+        /*El contenedor es el que contiene todo el contenido */
+        grid-template-areas: "header contenido contenido"
+            "widget-1 widget-2"
+            "footer footer footer";
+    }
+}
